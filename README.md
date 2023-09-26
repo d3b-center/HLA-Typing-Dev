@@ -1,12 +1,10 @@
 # D3b Bixu Repository Template
 
-Use this template to bootstrap a new D3b bixu repository 
+This repo is for testing and benchmarking various HLA typing software 
 
-### Badges
+## PHLAT
 
-Update the LICENSE badge to point to the new repo location on GitHub.
-Note that the LICENSE badge will fail to render correctly unless the repo has
-been set to **public**.
+This is a software revival of sorts based on the the work from [PHLAT: Inference of High-Resolution HLA Types from RNA and Whole Exome Sequencing](https://pubmed.ncbi.nlm.nih.gov/29858810/). While the link the authors prodived no longer works, our collaborators have found this tool invaluable and have provided us their copy
 
 Add additional badges for CI, docs, and other integrations as needed within the
 `<p>` tag next to the LICENSE.
