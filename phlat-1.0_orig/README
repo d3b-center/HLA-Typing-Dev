@@ -1,0 +1,37 @@
+############################################################
+## PHLAT IS DEVELOPED BY REGENERON PHARMACEUTICALS INC.   ##
+## UNDER A PROPRIETARY LICENSE. THE PHLAT-1.0 DISTRIBUTION##
+## CAN BE APPLIED IN ACADEMIC RESEARCH ONLY AND RESTRICTED##
+## FROM OTHER USES #########################################
+
+##### phlat-1.0 is an implementation of PHLAT algorithm for Linux environment ######
+
+##################### System requirement #############################
+## Linux (preferrably Ubuntu)
+## Python 2.7 (http://www.python.org/download/releases/2.7)
+## python modules:pysam, cPickle, sets, copy, math, re, os, sys, subprocess
+## Bowtie 2 (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml,version requirement is not expected, 2.0.0-beta7 was verified for compatibility) 
+
+
+##################### Installation #############################
+## 1. Unpack phlat-1.0.tar.gz
+## 2. Unpack index4phlat.tar.gz and place the index files for Bowtie2 to subfolder "index4phlat" in the home folder of phlat
+
+
+##################### Execution #############################
+## 1.Modify configuration parameters (see example.sh as template) 
+##   phlatdir: the home directory of phlat-1.0
+##   fastq1: fastq file of the first reads 
+##   fastq2: fastq file of the second reads
+##   indexdir: the index4phlat subfolder in phlat-1.0 package
+##   b2url: url to bowtie2 executable
+## **Be sure python 2.7 executable can be directly accessed as, e.g.,"python2.7". Otherwise call by full path
+
+## 2. >sh example.sh 
+
+##### Additional options:
+## -tag: name label for the sample associated with the fastq files
+## -p: number of threads for running Bowtie2 [default 8]
+## -e: url to the home folder of phlat-1.0 package
+## -o: url to a directory where results shall be stored
+## -pe: flag indicating whether the data shall be treated as paired-end(1) or single-end(0) [default 1]

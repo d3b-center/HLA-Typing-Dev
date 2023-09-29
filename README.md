@@ -1,22 +1,27 @@
-# D3b Bixu Repository Template
+# HLA Typing Development
 
-Use this template to bootstrap a new D3b bixu repository 
+This repo is for testing and benchmarking various HLA typing software.
+In it's current state, it is in alpha phase and should only be used if you are familar with this and know what you are doing
 
-### Badges
+## PHLAT
 
-Update the LICENSE badge to point to the new repo location on GitHub.
-Note that the LICENSE badge will fail to render correctly unless the repo has
-been set to **public**.
+This is a software revival of sorts based on the the work from [PHLAT: Inference of High-Resolution HLA Types from RNA and Whole Exome Sequencing](https://pubmed.ncbi.nlm.nih.gov/29858810/). While the link the authors prodived no longer works, our collaborators have found this tool invaluable and have provided us their copy.
+It is a work in progress and WILL change for ease of use and flexibility.
 
 Add additional badges for CI, docs, and other integrations as needed within the
 `<p>` tag next to the LICENSE.
 
-### Repo Description
+### Usage Params
+```
+Usage: PHLAT.py -1 fastq1 [-2 fastq2] -index indexdir -b2url b2url [-tag samplename] [-p nthreads] [-e phlatdir] [-o outdir] [-pe 1]
+-1: fastq file of the reads if single-end, or the first reads if paired-end
+-2: fastq file of the second reads if paired-end;ignored if single-end
+-index: url to the index files for Bowtie2 [default: index4phlat subfolder in phlat-1.0 packge]
+-b2url: url to Bowtie2 executable
+-tag: name label for the sample associated with the fastq files
+-p: number of threads for running Bowtie2 [default 8]
+-e: url to the home folder of phlat-1.0 package
+-o: url to a directory where results shall be stored
+-pe: flag indicating whether the data shall be treated as paired-end(1) or single-end(0) [default 1]
+```
 
-Update the repositories description with a short summary of the repository's
-intent.
-Include an appropriate emoji at the start of the summary.
-
-Add a handful of tags that summarize topics relating to the repository.
-If the repo has a documentation site or webpage, add it next to the repository
-description.
