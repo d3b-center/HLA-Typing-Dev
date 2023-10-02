@@ -5,6 +5,7 @@ import argparse
 from utilities import *
 from extensions import *
 import cPickle as pickle
+import pdb
 
 parser = argparse.ArgumentParser(
     description="Run HLA typing using PHLAT algorithm on preprocessed inputs"
@@ -33,7 +34,7 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-bamfile = args.qsorted_bam
+bamfile = args.qsort_bam
 outfile = args.output_basename + '_HLA.sum'
 mapfile = args.hla_map
 f1 = file(args.preload_pickle, 'rb')
@@ -50,5 +51,6 @@ readmaster.retainReadsByName(allelemaster.getReadNamesToKeep())
 pileupper = readPileupper()
 pileupper.pileupBySample(readmaster.getReadDict(), snpdb)
 LLgenoDict = calLLgenoDict(pileupper.extbasemap, doRound=True)
+pdb.set_trace()
 llmaster = LLmaster(LLgenoDict, pileupper.phasemap, allelemaster, hladb, snpdb)
 outputResults(outfile, llmaster)

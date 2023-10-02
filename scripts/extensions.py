@@ -4,7 +4,7 @@
 # [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
 # Embedded file name: /home/yu.bai/phlat-release/dist/extensions.py
 # Compiled at: 2014-07-07 12:23:59
-import sets, copy, math, re
+import sets, copy, math
 
 def convertName(aname, resolution='4d', verbal=True):
     resolution = resolution.lower()
