@@ -57,7 +57,7 @@ if __name__=="__main__":
             ispe=int(val)
         elif switch=="-p":
             nthreads=int(val)
-    prepare(fastq1,fastq2,artindex,b2url,tag,outdir,phlatdir,ispe,"--rf", nthreads)
+    prepare(fastq1,fastq2,artindex,b2url,tag,outdir,phlatdir,ispe,"--fr", nthreads)
 
     start=datetime.datetime.now()
     print "..... Running PHLAT ......."

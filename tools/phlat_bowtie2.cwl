@@ -23,7 +23,7 @@ arguments:
       | grep -P "\t(A\*|B\*|C\*|DQA1\*|DQB1\*|DRB1\*)" | grep -P -v "\tchr" > $(inputs.output_basename).bwt2.preprocess.sam
 
 inputs:
-  orientation: {type: ['null', {type: enum, name: orientation, symbols: ["--fr", "--rf", "--ff"]}], default: "--rf", doc: "If paired-end, read orientation",
+  orientation: {type: ['null', {type: enum, name: orientation, symbols: ["--fr", "--rf", "--ff"]}], default: "--fr", doc: "If paired-end, read orientation",
     inputBinding: {position: 1}}
   maxins: { type: 'int?', doc: "maximum fragment length", default: 450, inputBinding: { position: 1, prefix: "--maxins" } }
   no_mixed: { type: 'boolean?', doc: "suppress unpaired alignments for paired reads", default: true, inputBinding: { position: 1, prefix: "--no-mixed" } }
