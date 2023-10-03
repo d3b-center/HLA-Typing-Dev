@@ -43,4 +43,4 @@ inputs:
 outputs:
   hla_map: { type: File, outputBinding: { glob: $(inputs.phlat_sam.nameroot)_HLA.map } }
   phlat_bam: { type: File, outputBinding: { glob: $(inputs.phlat_sam.nameroot).tmp.bam } }
-  phlat_name_sort: { type: File, outputBinding: { glob: $(inputs.phlat_sam.nameroot)_HLA.qnsorted } }
+  phlat_name_sort: { type: File, outputBinding: { glob: $(inputs.phlat_sam.nameroot)_HLA.qnsorted.bam } }

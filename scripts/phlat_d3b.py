@@ -57,3 +57,4 @@ try:
 except Exception as e:
     sys.stderr.write("Enountered an error while HLA scoring:\n")
     sys.stderr.write(str(e) + '\n')
+    exit(1)
