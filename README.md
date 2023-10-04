@@ -1,15 +1,13 @@
 # HLA Typing Development
 
 This repo is for testing and benchmarking various HLA typing software.
-In it's current state, it is in alpha phase and should only be used if you are familar with this and know what you are doing
+In it's current state, it is in alpha phase and should only be used if you are familiar with this and know what you are doing
 
-## PHLAT
+## [PHLAT](docs/logo/D3b_PHLAT_README.md)
 
-This is a software revival of sorts based on the the work from [PHLAT: Inference of High-Resolution HLA Types from RNA and Whole Exome Sequencing](https://pubmed.ncbi.nlm.nih.gov/29858810/). While the link the authors prodived no longer works, our collaborators have found this tool invaluable and have provided us their copy.
-It is a work in progress and WILL change for ease of use and flexibility.
+This is a software revival of sorts based on the the work from [PHLAT: Inference of High-Resolution HLA Types from RNA and Whole Exome Sequencing](https://pubmed.ncbi.nlm.nih.gov/29858810/). While the link the authors provided no longer works, our collaborators have found this tool invaluable and have provided us their copy.
+The `phlat-1.0` directory is there for a point of reference, please refer to the [D3b PHLAT README](docs/logo/D3b_PHLAT_README.md) for our functionally equivalent implementation
 
-Add additional badges for CI, docs, and other integrations as needed within the
-`<p>` tag next to the LICENSE.
 
 ### Usage Params
 ```
