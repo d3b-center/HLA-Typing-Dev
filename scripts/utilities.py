@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 import pysam
 from extensions import *
 import cPickle as pickle, os

@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 """
 A rewrite of the PHLAT.py go function to perform final scoring
 """

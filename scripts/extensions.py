@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 # uncompyle6 version 3.7.4
 # Python bytecode 2.7 (62211)
 # Decompiled from: Python 3.6.8 (default, Apr  2 2020, 13:34:55) 

@@ -3,7 +3,7 @@
 This is a software revival of sorts based on the the work from [PHLAT: Inference of High-Resolution HLA Types from RNA and Whole Exome Sequencing](https://pubmed.ncbi.nlm.nih.gov/29858810/).
 It was unfortunately implemented in python 2.7 and currently there are no plans to attempt to port over the original code to python3.
 However, the workflow implementation should make this far easier and more accessible to use.
-Some of the support scripts, like `scripts/extensions.py` and `scripts/utilities.py` have been copied over as-is to help ensure functional equivalency, while the former `PHAT.py` (`go()` function replaced by `scripts/phlat_d3b.py`) and `prepare.py` have been replaced with cwltool implementations for ease of use and readability
+Some of the support scripts, like `scripts/extensions.py` and `scripts/utilities.py` have been copied over as-is to help ensure functional equivalency, while the former `PHLAT.py` (`go()` function replaced by `scripts/phlat_d3b.py`) and `prepare.py` have been replaced with cwltool implementations for ease of use and readability
 
 ## [D3b PHLAT Workflow](workflow/d3b_phlat_hla_type_wf.cwl)
 
