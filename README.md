@@ -3,7 +3,7 @@
 This repo is for testing and benchmarking various HLA typing software.
 In it's current state, it is in alpha phase and should only be used if you are familiar with this and know what you are doing
 
-## [PHLAT](docs/logo/D3b_PHLAT_README.md)
+## [PHLAT](docs/D3b_PHLAT_README.md)
 
 This is a software revival of sorts based on the the work from [PHLAT: Inference of High-Resolution HLA Types from RNA and Whole Exome Sequencing](https://pubmed.ncbi.nlm.nih.gov/29858810/). While the link the authors provided no longer works, our collaborators have found this tool invaluable and have provided us their copy.
 The `phlat-1.0` directory is there for a point of reference, please refer to the [D3b PHLAT README](docs/logo/D3b_PHLAT_README.md) for our functionally equivalent implementation
@@ -22,4 +22,6 @@ Usage: PHLAT.py -1 fastq1 [-2 fastq2] -index indexdir -b2url b2url [-tag samplen
 -o: url to a directory where results shall be stored
 -pe: flag indicating whether the data shall be treated as paired-end(1) or single-end(0) [default 1]
 ```
+
+## [T1K](docs/T1K_README.md)
 
