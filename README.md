@@ -24,4 +24,5 @@ Usage: PHLAT.py -1 fastq1 [-2 fastq2] -index indexdir -b2url b2url [-tag samplen
 ```
 
 ## [T1K](docs/T1K_README.md)
+T1K is another HLA (and KIR) typing tool. See linked readme for more
 

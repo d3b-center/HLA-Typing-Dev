@@ -1,5 +1,5 @@
 # T1K Genotyper
-["The ONE genotyper for Kir and HLA](https://github.com/mourisl/T1K/).
+["The ONE genotyper for Kir and HLA"](https://github.com/mourisl/T1K/).
 Currently implemented as a tool, the [usage guide](https://github.com/mourisl/T1K/tree/v1.0.2#usage) explains all the possible tool options. Currently, the cwltool is limited, but will be expanded with future development
 
 ## tools/t1k.cwl
