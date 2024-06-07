@@ -12,23 +12,17 @@ requirements:
     dockerPull: pgc-images.sbgenomics.com/d3b-bixu/t1k:v1.0.5
 baseCommand: []
 arguments:
-  - position: 0
-    shellQuote: false
-    valueFrom: >-
-      tar xzf
   - position: 10
     shellQuote: false
     valueFrom: >-
-      && /T1K-1.0.5/run-t1k
+      /T1K-1.0.5/run-t1k
   - position: 20
     shellQuote: false
     valueFrom: >-
       && sed -i '1s/^/gene_name\tnum_diff_alleles\tallele_1\tabundance_1\tquality_1\tallele_2\tabundance_2\tquality_2\tsecondary_alleles\n/' *_genotype.tsv
 
 inputs:
-  t1k_ref_tar: { type: File, doc: "Tar ball with T1K reference", inputBinding: { position: 2 } }
-  t1k_ref_path: { type: string, doc: "String of path to un-tarred hla ref, i.e. kiridx/kiridx_rna_seq.fa", inputBinding: { position: 12, prefix: "-f"}  }
-
+  reference: { type: 'File', inputBinding: { position: 12 , prefix: "-f" }, doc: "reference sequence file" }
   reads: { type: 'File?', doc: "read1 fastq reads if paired-end", inputBinding: { position: 12 , prefix: "-1" } }
   mates: { type: 'File?', doc: "mates (read2) fastq reads if paired-end", inputBinding: { position: 12 , prefix: "-2" } }
   single_end: { type: 'File?', doc: "fastq reads if single-end", inputBinding: { position: 12 , prefix: "-u" } }
