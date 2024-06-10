@@ -9,13 +9,17 @@ requirements:
     ramMin: $(inputs.ram * 1000)
     coresMin: $(inputs.threads)
   - class: DockerRequirement
-    dockerPull: pgc-images.sbgenomics.com/d3b-bixu/t1k:v1.0.5
+    dockerPull: pgc-images.sbgenomics.com/danmiller/t1k:1.0.5
 baseCommand: []
 arguments:
+  - position: 0
+    shellQuote: false
+    valueFrom: >-
+      $(inputs.cram_reference != null && inputs.bam != null && inputs.bam.basename.search(/.cram$/) != -1 ? "perl /opt/seq_cache_populate.pl -root .cache/hts-ref " + inputs.cram_reference.path + " && export REF_CACHE=.cache/hts-ref/%2s/%2s/%s &&" : "")
   - position: 10
     shellQuote: false
     valueFrom: >-
-      /T1K-1.0.5/run-t1k
+      run-t1k
   - position: 20
     shellQuote: false
     valueFrom: >-
@@ -23,11 +27,12 @@ arguments:
 
 inputs:
   reference: { type: 'File', inputBinding: { position: 12 , prefix: "-f" }, doc: "reference sequence file" }
+  cram_reference: { type: 'File?', secondaryFiles: [{pattern: ".fai", required: true}], doc: "FAI-indexed FASTA file used to compress CRAM input." }
   reads: { type: 'File?', doc: "read1 fastq reads if paired-end", inputBinding: { position: 12 , prefix: "-1" } }
   mates: { type: 'File?', doc: "mates (read2) fastq reads if paired-end", inputBinding: { position: 12 , prefix: "-2" } }
   single_end: { type: 'File?', doc: "fastq reads if single-end", inputBinding: { position: 12 , prefix: "-u" } }
   interleaved: { type: 'File?', doc: "fastq reads if interleaved", inputBinding: { position: 12 , prefix: "-i" } }
-  bam: { type: 'File?', doc: "if bam input", inputBinding: { position: 12 , prefix: "-b" } }
+  bam: { type: 'File?', secondaryFiles: [{pattern: ".bai", required: false}, {pattern: "^.bai", required: false}, {pattern: ".crai", required: false}, {pattern: "^.crai", required: false}], doc: "Indexed BAM/CRAM/SAM input", inputBinding: { position: 12 , prefix: "-b" } }
   output_basename: { type: 'string?', doc: "Prefix string for output file names. Default inferred from input", inputBinding: { position: 12, prefix: "-o"} }
   preset: {type: ['null', {type: enum, name: preset, symbols: ["hla", "hla-wgs", "kir-wgs", "kir-wes"]}], default: "hla", doc: "If paired-end, read orientation", inputBinding: { position: 12 , prefix: "--preset"} }
   stage: {type: ['null', {type: enum, name: stage, symbols: ["0", "1", "2"]}], inputBinding: { position: 12 , prefix: "--stage" }, doc: "start genotyping on specified stage; 0: start from beginning (candidate read extraction). 1: start from genotype with candidate reads. 2: start from post analysis" }
