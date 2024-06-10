@@ -9,7 +9,7 @@ requirements:
     ramMin: $(inputs.ram * 1000)
     coresMin: $(inputs.threads)
   - class: DockerRequirement
-    dockerPull: pgc-images.sbgenomics.com/d3b-bixu/t1k:1.0.5
+    dockerPull: pgc-images.sbgenomics.com/d3b-bixu/t1k:v1.0.5
 baseCommand: []
 arguments:
   - position: 0
